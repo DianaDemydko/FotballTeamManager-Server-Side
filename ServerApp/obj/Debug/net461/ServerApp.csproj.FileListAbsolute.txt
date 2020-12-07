@@ -307,7 +307,6 @@ C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\refs\Syste
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\refs\System.Threading.Thread.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\refs\System.Threading.ThreadPool.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\refs\System.Threading.Timer.dll
-C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\refs\System.ValueTuple.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\refs\System.Xml.ReaderWriter.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\refs\System.Xml.XDocument.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\refs\System.Xml.XmlDocument.dll
@@ -347,4 +346,8 @@ C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\ru\Microso
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\zh-Hans\Microsoft.Data.SqlClient.resources.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\Microsoft.AspNetCore.Server.IIS.dll
+C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\Microsoft.Extensions.Logging.EventSource.dll
+C:\Users\exoft-user\source\repos\ServerApp\ServerApp\obj\Debug\net461\ServerApp.csprojAssemblyReference.cache
+C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\System.Text.Json.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\obj\Debug\net461\ServerApp.csproj.CoreCompileInputs.cache

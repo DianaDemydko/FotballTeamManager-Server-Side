@@ -15,13 +15,11 @@ namespace ServerApp
             {
                 var optionsBuilder = new DbContextOptionsBuilder<RepositoryContext>();
 
-                // получаем конфигурацию из файла appsettings.json
                 ConfigurationBuilder builder = new ConfigurationBuilder();
                 builder.SetBasePath(Directory.GetCurrentDirectory());
                 builder.AddJsonFile("appsettings.json");
                 IConfigurationRoot config = builder.Build();
 
-                // получаем строку подключения из файла appsettings.json
                 string connectionString = config.GetConnectionString("FootballManagerDB");
                 optionsBuilder.UseSqlServer(connectionString, opts => opts.CommandTimeout((int)TimeSpan.FromMinutes(10).TotalSeconds));
                 return new RepositoryContext(optionsBuilder.Options);
