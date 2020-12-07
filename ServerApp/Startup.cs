@@ -35,7 +35,7 @@ namespace ServerApp
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
+            services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("FootballManagerDB")));
 
             services.ConfigureCors();
             services.ConfigureIISIntegration();
