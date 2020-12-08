@@ -14,6 +14,11 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using ServerApp.Extension;
+using ServerApp.Repositories;
+using ServerApp.Repositories.Interfaces;
+using ServerApp.Services.Interfaces;
+using ServerApp.Services;
+using AutoMapper;
 
 namespace ServerApp
 {
@@ -36,6 +41,17 @@ namespace ServerApp
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("FootballManagerDB")));
+
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new AutoMappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<ITeamServise, TeamService>();
 
             services.ConfigureCors();
             services.ConfigureIISIntegration();

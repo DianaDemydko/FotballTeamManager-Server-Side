@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "LBo/uoFsJUXXCj7bJUqzyq9bFep0XwEu5f1tqd6EnWn4xa20bUdKu3ZbQKgwxZ/Js0gdBHOXbvn1s6zgXeoo9A==",
+  "dgSpecHash": "2G6G7strRTyVAz+ya7VcUfjfjmfJ6x82HhpSIJ2ThAg/iE07weikDBg2iSgjUjIZr1WJxNr/De01V3zqdDsRwQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\exoft-user\\source\\repos\\ServerApp\\ServerApp\\ServerApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\exoft-user\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\exoft-user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\exoft-user\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\exoft-user\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\exoft-user\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
