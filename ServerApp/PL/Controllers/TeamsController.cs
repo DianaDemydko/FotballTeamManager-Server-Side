@@ -18,37 +18,46 @@ namespace ServerApp.PL.Controllers
         {
             this.teamServise = teamServise;
         }
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<TeamDTO>> Get()
+        // GET Teams
+        [HttpGet("[action]")]
+        public ActionResult<IEnumerable<TeamDTO>> GetTeams()
         {
             return teamServise.GetAllTeams().ToList();
         }
 
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public ActionResult<string> Get(int id)
-        //{
-        //    return "value";
-        //}
+        // GET Team Members
+        [HttpGet("[action]/{id}")]
+        public ActionResult<IEnumerable<UserDTO>> GetTeamMembers(int id)
+        {
+            return teamServise.GetAllTeamMembers(id).ToList();
+        }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] TeamDTO team)
+        // POST Create Team
+        [HttpPost("[action]")]
+        public void CreateTeam([FromBody] TeamDTO team)
         {
             teamServise.CreateTeam(team);
         }
 
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
+        // PUT Change name
+        [HttpPatch("[action]/{id}/{name}")]
+        public void ChangeTeamName(int id, string name)
+        {
+            teamServise.ChangeTeamName(id, name);
+        }
 
-        //// DELETE api/values/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        //PUT Add player to team
+        [HttpPut("[action]/{id}")]
+        public void AddPlayerToTeam(int id, [FromBody] int playerId)
+        {
+            teamServise.AddPlayer(id, playerId);
+        }
+
+        // DELETE Delete team
+        [HttpDelete("[action]/{id}")]
+        public void DeleteTeam(int id)
+        {
+            teamServise.RemoveTeam(id);
+        }
     }
 }

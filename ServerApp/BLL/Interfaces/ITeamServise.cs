@@ -9,8 +9,8 @@ namespace ServerApp.Services.Interfaces
     public interface ITeamServise : IDisposable
     {
         void CreateTeam(TeamDTO teamDTO);
-        void AddPlayer(int teamId, UserDTO userDTO);
-        void RemovePlayer(int teamId, UserDTO userDTO);
+        void AddPlayer(int teamId, int userId);
+        void RemovePlayer(int userId);
 
         void RemoveTeam(int teamId);
         void ChangeTeamName(int teamId, string newTeamName);

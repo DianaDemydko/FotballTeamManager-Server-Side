@@ -36,27 +36,39 @@ namespace ServerApp.Services
             UnitOfWork.TeamRepository.Insert(teamEntity);
             UnitOfWork.SaveChanges();
         }
-        public void AddPlayer(int teamId, UserDTO userDTO)
+        public void AddPlayer(int teamId, int userId)
         {
-
+            User userToUpdate = UnitOfWork.UserRepository.GetByID(userId);
+            userToUpdate.TeamId = teamId;
+            UnitOfWork.UserRepository.Update(userToUpdate);
+            UnitOfWork.SaveChanges();
         }
-        public void RemovePlayer(int teamId, UserDTO userDTO)
+        public void RemovePlayer(int userId)
         {
-
+            User userToUpdate = UnitOfWork.UserRepository.GetByID(userId);
+            userToUpdate.TeamId = null;
+            UnitOfWork.UserRepository.Update(userToUpdate);
+            UnitOfWork.SaveChanges();
         }
 
         public void RemoveTeam(int teamId)
         {
-
+            UnitOfWork.TeamRepository.Delete(teamId);
+            UnitOfWork.SaveChanges();
         }
         public void ChangeTeamName(int teamId, string newTeamName)
         {
-
+            Team teamToUpdate = UnitOfWork.TeamRepository.GetByID(teamId);
+            teamToUpdate.Name = newTeamName;
+            UnitOfWork.TeamRepository.Update(teamToUpdate);
+            UnitOfWork.SaveChanges();
         }
 
         public IEnumerable<UserDTO> GetAllTeamMembers(int teamId)
         {
-            return null;
+            IEnumerable<User> users = UnitOfWork.UserRepository.Get(item => item.TeamId == teamId, null, "Team,Role");
+
+            return _mapper.Map<IEnumerable<UserDTO>>(users);
         }
 
         protected virtual void Dispose(bool disposing)
