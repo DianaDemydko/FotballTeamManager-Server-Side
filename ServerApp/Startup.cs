@@ -19,6 +19,8 @@ using ServerApp.Repositories.Interfaces;
 using ServerApp.Services.Interfaces;
 using ServerApp.Services;
 using AutoMapper;
+using ServerApp.BLL.Interfaces;
+using ServerApp.BLL;
 
 namespace ServerApp
 {
@@ -52,6 +54,7 @@ namespace ServerApp
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<ITeamServise, TeamService>();
+            services.AddTransient<IGameService, GameService>();
 
             services.ConfigureCors();
             services.ConfigureIISIntegration();
