@@ -18,5 +18,11 @@ namespace ServerApp.Services.Interfaces
         IEnumerable<TeamDTO> GetAllTeams();
 
         IEnumerable<UserDTO> GetAllTeamMembers(int teamId);
+
+        TeamDTO GetTeamById(int teamId);
+
+        IEnumerable<RoleDTO> GetTeamRoles();
+
+        void ChangePlayerRole(int userId, int roleId);
     }
 }

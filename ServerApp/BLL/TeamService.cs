@@ -71,6 +71,24 @@ namespace ServerApp.Services
             return _mapper.Map<IEnumerable<UserDTO>>(users);
         }
 
+        public TeamDTO GetTeamById(int teamId)
+        {
+            return _mapper.Map<TeamDTO>(UnitOfWork.TeamRepository.GetByID(teamId));
+        }
+
+        public IEnumerable<RoleDTO> GetTeamRoles()
+        {
+            return _mapper.Map<IEnumerable<RoleDTO>>(UnitOfWork.RoleRepository.Get());
+        }
+
+        public void ChangePlayerRole(int userId, int roleId)
+        {
+            User userToChange = UnitOfWork.UserRepository.Get(item => item.Id == userId, null, "").FirstOrDefault();
+            userToChange.RoleId = roleId;
+            UnitOfWork.UserRepository.Update(userToChange);
+            UnitOfWork.SaveChanges();
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (!this.disposed)

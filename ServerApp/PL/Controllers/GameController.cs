@@ -27,21 +27,50 @@ namespace ServerApp.PL.Controllers
         }
 
         [HttpPatch("[action]/{id:int}")]
-        public void UpdateGamePlace(int id, [FromBody] int placeId)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult UpdateGamePlace(int id, [FromBody] int placeId)
         {
-            gameService.ChangePlace(id, placeId);
+            try
+            {
+                gameService.ChangePlace(id, placeId);
+                return Ok();
+            } catch
+            {
+                return NotFound();
+            }
+
         }
 
         [HttpPost("[action]")]
-        public void  CreateGame([FromBody] GameDTO newGame)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult CreateGame([FromBody] GameDTO newGame)
         {
-            gameService.CreateGame(newGame);
+            try
+            {
+                gameService.CreateGame(newGame);
+                return Ok();
+            } catch
+            {
+                return BadRequest();
+            }
+            
         }
 
         [HttpDelete("[action]/{id:int}")]
-        public void DeleteGame(int id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult DeleteGame(int id)
         {
-            gameService.DeleteGame(id);
+            try
+            {
+                gameService.DeleteGame(id);
+                return Ok();
+            } catch
+            {
+                return BadRequest();
+            }
         }
     }
 }

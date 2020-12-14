@@ -25,6 +25,20 @@ namespace ServerApp.PL.Controllers
             return teamServise.GetAllTeams().ToList();
         }
 
+        // GET Team by ID
+        [HttpGet("[action]/{id}")]
+        public ActionResult<TeamDTO> GetTeamById(int id)
+        {
+            return teamServise.GetTeamById(id);
+        }
+
+        // GET All Team Roles
+        [HttpGet("[action]")]
+        public ActionResult<IEnumerable<RoleDTO>> GetTeamRoles()
+        {
+            return teamServise.GetTeamRoles().ToList();
+        }
+
         // GET Team Members
         [HttpGet("[action]/{id}")]
         public ActionResult<IEnumerable<UserDTO>> GetTeamMembers(int id)
@@ -34,30 +48,104 @@ namespace ServerApp.PL.Controllers
 
         // POST Create Team
         [HttpPost("[action]")]
-        public void CreateTeam([FromBody] TeamDTO team)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult CreateTeam([FromBody] TeamDTO team)
         {
-            teamServise.CreateTeam(team);
+            try
+            {
+                teamServise.CreateTeam(team);
+                return Ok();
+            } catch
+            {
+                return BadRequest();
+            }
+            
         }
 
         // PUT Change name
         [HttpPatch("[action]/{id}/{name}")]
-        public void ChangeTeamName(int id, string name)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult ChangeTeamName(int id, string name)
         {
-            teamServise.ChangeTeamName(id, name);
+            try
+            {
+                teamServise.ChangeTeamName(id, name);
+                return Ok();
+            } catch
+            {
+                return NotFound();
+            }
+            
+        }
+
+        // PUT Change name
+        [HttpPatch("[action]/{userId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult RemovePlayer(int userId)
+        {
+            try
+            {
+                teamServise.RemovePlayer(userId);
+                return Ok();
+            }
+            catch
+            {
+                return NotFound();
+            }
+
+        }
+
+        //PATCH Change role of player in the team
+        [HttpPatch("[action]/{userId}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult ChangePlayerRole(int userId, [FromBody] int roleId)
+        {
+            try
+            {
+                teamServise.ChangePlayerRole(userId, roleId);
+                return Ok();
+            }
+            catch
+            {
+                return NotFound();
+            }
         }
 
         //PUT Add player to team
-        [HttpPut("[action]/{id}")]
-        public void AddPlayerToTeam(int id, [FromBody] int playerId)
+        [HttpPatch("[action]/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult AddPlayerToTeam(int id, [FromBody] int playerId)
         {
-            teamServise.AddPlayer(id, playerId);
+            try
+            {
+                teamServise.AddPlayer(id, playerId);
+                return Ok();
+            } catch
+            {
+                return NotFound();
+            }
         }
 
         // DELETE Delete team
         [HttpDelete("[action]/{id}")]
-        public void DeleteTeam(int id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult DeleteTeam(int id)
         {
-            teamServise.RemoveTeam(id);
+            try
+            {
+                teamServise.RemoveTeam(id);
+                return Ok();
+            } catch
+            {
+                return NotFound();
+            }
+           
         }
     }
 }
