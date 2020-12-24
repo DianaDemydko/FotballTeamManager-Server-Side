@@ -1,7 +1,6 @@
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\app.config
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\appsettings.Development.json
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\appsettings.json
-C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\Properties\launchSettings.json
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\ServerApp.exe.config
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\ServerApp.deps.json
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\ServerApp.exe
@@ -354,3 +353,4 @@ C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\AutoMapper
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\obj\Debug\net461\ServerApp.csproj.CoreCompileInputs.cache
 C:\Users\exoft-user\source\repos\ServerApp\ServerApp\obj\Debug\net461\ServerApp.csprojAssemblyReference.cache
+C:\Users\exoft-user\source\repos\ServerApp\ServerApp\bin\Debug\net461\web.config

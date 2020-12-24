@@ -99,10 +99,10 @@ namespace ServerApp.PL.Controllers
         }
 
         //PATCH Change role of player in the team
-        [HttpPatch("[action]/{userId}")]
+        [HttpPatch("[action]/{userId}/{roleId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult ChangePlayerRole(int userId, [FromBody] int roleId)
+        public IActionResult ChangePlayerRole(int userId, int roleId)
         {
             try
             {
