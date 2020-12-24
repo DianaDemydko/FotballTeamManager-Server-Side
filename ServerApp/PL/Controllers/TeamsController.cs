@@ -116,10 +116,10 @@ namespace ServerApp.PL.Controllers
         }
 
         //PUT Add player to team
-        [HttpPatch("[action]/{id}")]
+        [HttpPatch("[action]/{id}/{playerId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult AddPlayerToTeam(int id, [FromBody] int playerId)
+        public IActionResult AddPlayerToTeam(int id, int playerId)
         {
             try
             {
